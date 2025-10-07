@@ -37,10 +37,10 @@ export const actions = {
 				...sessionCookie.attributes,
 				path: '/'
 			});
-			throw redirect(302, '/accounts/login');
 		} catch (err) {
 			console.error(err);
 			return fail(400, { message: 'User already exists' });
 		}
+		throw redirect(302, '/accounts/login');
 	}
 };
